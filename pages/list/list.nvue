@@ -1,0 +1,82 @@
+<template>
+	<view>
+		<view class="item" v-for="(item, index) in arr" @click="onItemClick(index)">
+			<text class="title">{{item}}</text>
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+
+		data() {
+			return {
+				arr: ["JavaScript", "Custom", "API", "Storage", "Sync & Update", "scrollView", "swiper"]
+			};
+		},
+		methods: {
+			onItemClick(index) {
+				switch (index) {
+					case 0: {
+						uni.navigateTo({
+							url: "../js/js"
+						})
+						break
+					}
+					case 1: {
+						uni.navigateTo({
+							url: "../custom/custom"
+						})
+						break
+					}
+					case 2: {
+						uni.navigateTo({
+							url: "../api/api"
+						})
+						break
+					}
+					case 3: {
+						uni.navigateTo({
+							url: "../storage/storage"
+						})
+						break
+					}
+					case 4: {
+						uni.navigateTo({
+							url: "../sync/sync"
+						})
+						break
+					}
+					case 5: {
+						uni.navigateTo({
+							url: "../scrollview/scrollview"
+						})
+						break
+					}
+					case 6: {
+						uni.navigateTo({
+							url: "../swiper/swiper"
+						})
+						break
+					}
+				}
+			}
+		}
+	}
+</script>
+
+<style lang="scss">
+	.item {
+		width: 750rpx;
+		height: 100rpx;
+		background: lightblue;
+		border-bottom: solid gray 1rpx;
+		align-items: center;
+		justify-content: center;
+
+		.title {
+			font-size: 55rpx;
+			color: green,
+		}
+	}
+</style>

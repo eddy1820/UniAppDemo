@@ -1,0 +1,26 @@
+<template>
+	<view>
+		<myitem :status.sync="status"></myitem>
+		<button class="btn" @click="onClick">{{"open : "+status}}</button>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				status:false
+			};
+		},
+		methods: {
+			onClick() {
+				this.status = true
+			}
+		}
+
+	}
+</script>
+
+<style lang="scss">
+
+</style>

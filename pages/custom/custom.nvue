@@ -1,0 +1,98 @@
+<template>
+	<view>
+		<homeInfo ref="homeInfo" :title="homeInfoTitle" :user="userData" @onViewBtnClick="homeInfoCallback"></homeInfo>
+		<view class="title">Title</view>
+		<input class="input" v-model="title" @input="onTitleInput" placeholder="input title" />
+		<view class="title">Name</view>
+		<input class="input" v-model="name" @input="onNameInput" placeholder="input name" />
+		<view class="title">Age</view>
+		<input class="input" v-model="age" @input="onAgeInput" placeholder="input age" />
+		<button class="btn" @click="setView">Set homeInfoView</button>
+		<button class="btn" @click="getViewInfo">use refs to get data</button>
+
+		<view>{{text}}</view>
+		<button class="btn" v-if="text != ''" @click="clearText">Clear text</button>
+	</view>
+</template>
+
+<script>
+	import homeInfo from "@/components/homeInfo/homeInfo.vue"
+	export default {
+		data() {
+			return {
+				text: "",
+				title: "",
+				name: "",
+				age: "",
+				homeInfoTitle: "default",
+				userData: {
+					title: "Title",
+					name: "Eddy",
+					age: 23
+				}
+			};
+		},
+		methods: {
+			setView() {
+				this.userData = {
+					title: this.title,
+					name: this.name,
+					age: this.age
+				}
+			},
+			getViewInfo() {
+				let user = this.$refs.homeInfo.user
+				this.text = user
+			},
+			clearText() {
+				this.text = ""
+			},
+			onTitleInput(text) {
+				console.log(text.detail.value)
+			},
+			onNameInput(text) {
+				console.log(text.detail.value)
+			},
+			onAgeInput(text) {
+				console.log(text.detail.value)
+			},
+			homeInfoCallback(user) {
+				this.text = user
+				console.log(user)
+			}
+		},
+		computed: {
+
+		},
+		onLoad() {
+			console.log("onLoad")
+		},
+		mounted() {
+			console.log("mounted")
+		}
+	}
+</script>
+
+<style lang="scss">
+	.title {
+		margin-top: 0rpx;
+		font-size: 35rpx;
+		color: darkred;
+	}
+
+	.input {
+		border: solid gray 1rpx;
+	}
+
+	.btn {
+		margin-top: 30rpx;
+		background: green;
+		border: solid black 1rpx;
+	}
+
+	.fromChildView {
+		height: 60rpx;
+		margin-top: 30rpx;
+		border: solid gray 1rpx;
+	}
+</style>

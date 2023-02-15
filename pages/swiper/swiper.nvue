@@ -1,0 +1,28 @@
+<template>
+	<view>
+		<swiper class="swiper" indicator-dots="ture">
+
+			<swiper-item class="item" v-for="(url,index) in arr" >
+				<image :src="url" mode="heightFix"></image>
+			</swiper-item>
+
+		</swiper>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				arr: ["../../static/banner/pic1.jpg", "../../static/banner/pic2.jpg", "../../static/banner/pic3.jpg",
+					"../../static/banner/pic4.jpg", "../../static/banner/pic5.jpg",
+					"../../static/banner/pic6.jpg", "../../static/banner/pic7.jpg"
+				]
+			};
+		}
+	}
+</script>
+
+<style lang="scss">
+
+</style>

@@ -1,0 +1,56 @@
+<template>
+	<view>
+		<scroll-view class="scroll" scroll-x="true" @scrolltoupper="onScrollToTop" @scrolltolower="onScrollToBottom"
+			@scroll="onScroll">
+
+			<view class="container">
+				<view class="box" v-for="item in arr">
+
+				</view>
+			</view>
+		</scroll-view>
+
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				arr: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+			};
+		},
+		methods: {
+			onScroll(e) {
+				console.log(e)
+			},
+			onScrollToTop(e) {
+				console.log(e)
+			},
+			onScrollToBottom(e) {
+				console.log(e)
+			}
+		}
+	}
+</script>
+
+<style lang="scss">
+	.scroll {
+		border: solid gray 1rpx;
+		height: 300rpx;
+
+		.container {
+			display: flexbox;
+			flex-direction: row;
+			padding-left: 50rpx;
+			padding-right: 50rpx;
+
+			.box {
+				margin-right: 50rpx;
+				background: indianred;
+				width: 300rpx;
+				height: 300rpx;
+			}
+		}
+	}
+</style>

@@ -1,0 +1,52 @@
+<template>
+	<view>
+		<input class="input" type="text" v-model="name" placeholder="enter your name" />
+		<input class="input" type="text" v-model="age" placeholder="enter your age" />
+		<button class="btn" @click="save">save storage</button>
+		<button class="btn" @click="get">get storage</button>
+		<button class="btn" @click="clear">clear storage</button>
+		<view>{{text}}</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				text: "",
+				name: "",
+				age: ""
+
+			};
+		},
+		methods: {
+			save() {
+				console.log(this.name)
+				console.log(this.age)
+				uni.setStorageSync('info', {
+					name: this.name,
+					age: this.age
+				})
+			},
+			get() {
+				let info = uni.getStorageSync("info")
+				console.log(info)
+				this.text = info
+			},
+			clear() {
+				uni.clearStorageSync()
+			}
+		}
+	}
+</script>
+
+<style lang="scss">
+	.input {
+		margin-top: 15rpx;
+		border: solid gray 1rpx;
+	}
+
+	.btn {
+		margin-top: 15rpx;
+	}
+</style>

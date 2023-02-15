@@ -1,0 +1,127 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/list/list",
+			"style": {
+				"navigationBarTitleText": "List",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/user/user",
+			"style": {
+				"navigationBarTitleText": "User",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/js/js",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/custom/custom",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/detail/detail",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/api/api",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/storage/storage",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/sync/sync",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}
+	    ,{
+            "path" : "pages/scrollview/scrollview",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/swiper/swiper",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {},
+	"tabBar": {
+		"iconfontSrc": "static/fonts/iconfont.ttf",
+		"list": [
+			// {
+			// 	"text": "Home",
+			// 	"pagePath": "pages/home/home",
+			// 	"iconPath": "static/tabbar/home.png",
+			// 	"selectedIconPath": "static/tabbar/home-h.png"
+			// 	// "iconfont": {
+			// 	// 	"text": "\ue74e",
+			// 	// 	"selectedText": "\ue74e",
+			// 	// 	"color": "#333",
+			// 	// 	"selectedColor": "#007AFF"
+			// 	// }
+			// },
+			{
+				"text": "List",
+				"pagePath": "pages/list/list",
+				"iconPath": "static/tabbar/home.png",
+				"selectedIconPath": "static/tabbar/home-h.png"
+				// "iconfont": {
+				// 	"text": "\ue74e",
+				// 	"selectedText": "\ue74e",
+				// 	"color": "#333",
+				// 	"selectedColor": "#007AFF"
+				// }
+			},
+			{
+				"text": "User",
+				"pagePath": "pages/user/user",
+				"iconPath": "static/tabbar/user.png",
+				"selectedIconPath": "static/tabbar/user-h.png"
+				// "iconfont": {
+				// 	"text": "\ue74e",
+				// 	"selectedText": "\ue74e",
+				// 	"color": "#333",
+				// 	"selectedColor": "#007AFF"
+				// }
+			}
+		]
+	}
+}
