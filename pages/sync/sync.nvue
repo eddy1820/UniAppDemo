@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<myitem :status.sync="status"></myitem>
+		<myItem> :status.sync="status"></myItem>
 		<button class="btn" @click="onClick">{{"open : "+status}}</button>
 	</view>
 </template>
