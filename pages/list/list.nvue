@@ -11,7 +11,7 @@
 
 		data() {
 			return {
-				arr: ["JavaScript", "Custom", "API", "Storage", "Sync & Update", "scrollView", "swiper"]
+				arr: ["JavaScript", "Custom", "API", "Storage", "Sync & Update", "scrollView", "swiper","form"]
 			};
 		},
 		methods: {
@@ -56,6 +56,12 @@
 					case 6: {
 						uni.navigateTo({
 							url: "../swiper/swiper"
+						})
+						break
+					}
+					case 7: {
+						uni.navigateTo({
+							url: "../form/form"
 						})
 						break
 					}

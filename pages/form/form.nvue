@@ -1,0 +1,108 @@
+<template>
+	<view class="container">
+		<form @submit="onSubmit" @reset="onReset">
+			<view class="row">
+				<view class="title">Account:</view>
+				<input class="input" type="text" name="account" />
+			</view>
+			<view class="row">
+				<view class="title">Password:</view>
+				<input class="input" type="text" name="password" />
+			</view>
+			<view class="row">
+				<view class="title">Gender:</view>
+				<radio-group name="gender">
+					<radio class="radio" value="male">Male</radio>
+					<radio class="radio" value="female">Female</radio>
+				</radio-group>
+			</view>
+
+			<view class="row">
+				<view class="title">Hobby:</view>
+				<checkbox-group name="hobby">
+					<checkbox class="checkbox" value="sport">Sports</checkbox>
+					<checkbox class="checkbox" value="videoGame">Video Game</checkbox>
+					<checkbox class="checkbox" value="study">Study</checkbox>
+				</checkbox-group>
+			</view>
+
+			<picker :range="options" name="address" :value="selectValue" @change="pickerChange">
+				<view class="row">
+					<view>地區：</view>
+					<view class="pickerInput">{{options[selectValue]}}</view>
+				</view>
+			</picker>
+			<view class="row">
+				<button form-type="submit">提交</button>
+				<button form-type="reset">重置</button>
+			</view>
+		</form>
+		<view>{{userInfo}}</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				options: ["台北", "台中", "高雄"],
+				selectValue:null,
+				userInfo: {
+					account: "",
+					password: "",
+					gender: "",
+					hobby: [],
+					address: ""
+				}
+			};
+		},
+		methods: {
+			onSubmit(e) {
+				console.log(e.detail.value)
+				this.userInfo = e.detail.value
+				this.userInfo.address = this.selectValue == null ? "" : this.options[this.selectValue]
+			},
+			onReset() {
+				this.selectValue = null
+			},
+			pickerChange(e) {
+				this.selectValue = e.detail.value
+				console.log(e)
+			}
+		}
+	}
+</script>
+
+<style lang="scss">
+	.container {
+		padding: 20rpx;
+
+		.row {
+			padding-top: 25rpx;
+			flex-direction: row;
+			align-items: center;
+
+			.title {
+				margin-right: 20rpx;
+			}
+
+			.input {
+				border: solid gray 1rpx;
+			}
+
+			.radio {
+				margin-right: 15rpx;
+			}
+
+			.checkbox {
+				margin-right: 15rpx;
+			}
+
+			.pickerInput {
+				border: solid gray 1rpx;
+				padding-left: 8rpx;
+				padding-right: 8rpx;
+			}
+		}
+	}
+</style>
